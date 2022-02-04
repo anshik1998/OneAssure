@@ -1,7 +1,7 @@
 ## OneAssure
 
 ### Libraries Used:
-django, psycopg2 [postgreSql connector]
+django, psycopg2 [postgreSql connector], pipenv [For virtual environment]
 
 ### Database Used:
 PostgreSQL
@@ -35,6 +35,34 @@ E. oneassure: Main project folder
 
 ### How to!
 
+#### To check Python version:
+
+python --version [Version: Python 3.10.2]
+
+#### To check pip version:
+
+pip --version [Version: pip 21.3.1]
+
+#### To check django version:
+
+django-admin --version [Version: 4.0.2]
+
+#### To work in the virtual environment:
+
+pipenv shell
+
+#### To create a django project:
+
+django-admin startproject oneassure
+
+#### To create an app:
+
+python manage.py startapp homepage
+
+#### To run the Django web app:
+
+python manage.py runserver
+
 Whenever user make a request to any URL, it will be sent to "oneassure/urls". 
 
 A. If a user visits a homepage, then "oneassure/urls" will refer to "home/urls". "home/urls" will verify the url pattern and fetch the data from "views.home". "views.home" will further render the data from "homepage.html", and deliver the data in "homepage.html" back to the user.
@@ -43,19 +71,19 @@ http://127.0.0.1:8000/ --> oneassure\oneassure\urls.py --> oneassure\home\urls.p
 
 B. If a user click on "/account/register", then "oneassure/urls" will verify the url pattern and refer it tp "accounts/urls". "accounts/urls" then verify against its urlpatterns and fetch the data from "views.register". "views.register" will further render the data from "register.html", and deliver the data in "register.html" back to the user.
 
-For register:
+#### For register:
 
 http://127.0.0.1:8000/account/register --> oneassure\oneassure\urls.py --> oneassure\account\urls.py --> oneassure\account\views.py --> oneassure\templates\register.html --> Render the Register webpage
 
-For login:
+#### For login:
 
 http://127.0.0.1:8000/account/login --> oneassure\oneassure\urls.py --> oneassure\account\urls.py --> oneassure\account\views.py --> oneassure\templates\login.html --> Render the Login webpage
 
-For logout:
+#### For logout:
 
 http://127.0.0.1:8000/account/logout --> oneassure\oneassure\urls.py --> oneassure\account\urls.py --> oneassure\account\views.py --> Return to HomePage
 
-Listing Members [Only if user is logged in]:
+#### Listing Members [Only if user is logged in]:
 
 http://127.0.0.1:8000/account/users --> oneassure\oneassure\urls.py --> oneassure\account\urls.py --> oneassure\account\views.py --> oneassure\templates\users.html [Only if user is logged in] 
 
